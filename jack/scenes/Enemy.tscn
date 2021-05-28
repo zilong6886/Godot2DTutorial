@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
+
+[node name="EnemyRoot" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 10
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -69.4325, 0.496948, -53.8762, -7.98833, -48.9264, -21.4234, -34.0772, -22.484, -17.1066, -39.4546, 6.22792, -38.3939, 16.481, -16.4736, 22.4914, -15.0594, 43.7046, -40.8688, 63.8571, -40.5153, 53.2505, -15.413, 70.5746, -11.8774, 60.3216, -1.62437, 67.7462, 12.1642, 53.6041, 25.2457, 59.6145, 31.9632, 14.3596, 38.3272, 3.04594, 30.549, -6.14645, 30.9025, -16.0459, 40.4485, -35.4914, 40.802, -36.1985, 31.6096, -52.4619, 29.8419, -54.9368, 16.0533 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
